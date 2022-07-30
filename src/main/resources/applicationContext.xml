@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation=" http://www.springframework.org/schema/beans
+                            https://www.springframework.org/schema/beans/spring-beans.xsd
+                            http://www.springframework.org/schema/context
+                            https://www.springframework.org/schema/context/spring-context.xsd">
+
+
+    <bean id="customerRepository" class="com.kagangunturk.finalproject.repository.CustomerRepository">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+
+    <bean id="customerService" class="com.kagangunturk.finalproject.service.CustomerService">
+        <property name="customerRepository" ref="customerRepository"/>
+    </bean>
+
+    <bean id="policyRepository" class="com.kagangunturk.finalproject.repository.PolicyRepository">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+
+    <bean id="policyService" class="com.kagangunturk.finalproject.service.PolicyService">
+        <property name="policyRepository" ref="policyRepository"/>
+    </bean>
+
+    <bean id="customerPolicyRepository" class="com.kagangunturk.finalproject.repository.CustomerPolicyRepository">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+
+    <bean id="customerPolicyService" class="com.kagangunturk.finalproject.service.CustomerPolicyService">
+        <property name="customerPolicyRepository" ref="customerPolicyRepository"/>
+    </bean>
+
+    <bean id="paymentsRepository" class="com.kagangunturk.finalproject.repository.PaymentsRepository">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+
+    <bean id="paymentService" class="com.kagangunturk.finalproject.service.PaymentService">
+        <property name="paymentsRepository" ref="paymentsRepository"/>
+    </bean>
+
+
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <constructor-arg name="url" value="jdbc:postgresql://localhost:5433/deneme3"/>
+        <constructor-arg name="username" value="postgres"/>
+        <constructor-arg name="password" value="1234567"/>
+    </bean>
+
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="packagesToScan">
+            <array>
+                <value>com.kagangunturk.finalproject.model</value>
+                <value>com.kagangunturk.finalproject.repository</value>
+                <value>com.kagangunturk.finalproject.service</value>
+            </array>
+        </property>
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.dialect">org.hibernate.dialect.PostgresPlusDialect</prop>
+                <prop key="hibernate.show_sql">false</prop>
+                <prop key="hibernate.format_sql">false</prop>
+                <prop key="hibernate.hbm2ddl.auto">update</prop>
+            </props>
+        </property>
+    </bean>
+
+</beans>
