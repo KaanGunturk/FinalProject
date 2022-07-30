@@ -8,9 +8,9 @@ To run this project, open applicationContext.xml file and adjust your database c
 
 ## Use Case
 
-<img src="https://github.com/KaanGunturk/TermProjectt/blob/master/images/UseCase.jpg" width="1000" height="500">
+<img src="https://github.com/KaanGunturk/FinalProject/blob/master/images/UseCase.jpg" width="1000" height="500">
 
 ## ER Diagram
 
-<img src="https://github.com/KaanGunturk/TermProjectt/blob/master/images/Er%20Diagram.png" width="1000" height="500">
+<img src="https://github.com/KaanGunturk/FinalProject/blob/master/images/Er%20Diagram.png" width="1000" height="500">
 
