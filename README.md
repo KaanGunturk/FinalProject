@@ -4,6 +4,10 @@
 ## Setup
 To run this project, open applicationContext.xml file and adjust your database connection
 
+## Admin 
+UserName:kagan
+Password:12345
+
 
 
 ## Use Case
