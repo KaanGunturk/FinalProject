@@ -1,6 +1,7 @@
 package com.kagangunturk.finalproject;
 
 import com.kagangunturk.finalproject.model.Customer;
+import com.kagangunturk.finalproject.model.Payment;
 import com.kagangunturk.finalproject.service.CustomerService;
 import org.junit.Assert;
 import org.junit.Before;
@@ -45,5 +46,13 @@ public class CustomerTest {
         String expectedName = customer.getCustomer_firstname();
         String actualName = "Cayla";
         Assert.assertEquals(expectedName, actualName);
+    }
+
+    @Test
+    public  void testReadCustomerCsv() throws Exception {
+        List<Customer> readPolicyCSV=customerService.readCustomerCSV("customer.csv");
+        Boolean actualResult =readPolicyCSV.isEmpty();
+        Boolean expectedResult = false;
+        Assert.assertEquals(expectedResult, actualResult);
     }
 }
