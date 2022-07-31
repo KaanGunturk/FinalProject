@@ -21,3 +21,8 @@ Password:12345
 ## Admin Panel
 
 <img src="https://github.com/KaanGunturk/FinalProject/blob/master/images/LoginPanel.png" width="1000" height="500">
+
+## Test Coverage
+
+<img src="https://github.com/KaanGunturk/FinalProject/blob/master/images/TestCoverage.png" width="1000" height="500">
+
