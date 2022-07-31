@@ -29,16 +29,15 @@ public class CustomerPolicyTest {
 
 
         List<CustomerPolicy> customerPolicyList = customerPolicyService.getAll();
-
         int actualSizeResult = customerPolicyList.size();
         int expectedSizeResult = 100;
         Assert.assertEquals(expectedSizeResult, actualSizeResult);
     }
 
     @Test
-    public  void testReadCustomerPolicyCsv() throws Exception {
-        List<CustomerPolicy> readPolicyCSV=customerPolicyService.readCustomerPolicyCSV("customer_policy.csv");
-        Boolean actualResult =readPolicyCSV.isEmpty();
+    public void testReadCustomerPolicyCsv() throws Exception {
+        List<CustomerPolicy> readPolicyCSV = customerPolicyService.readCustomerPolicyCSV("customer_policy.csv");
+        Boolean actualResult = readPolicyCSV.isEmpty();
         Boolean expectedResult = false;
         Assert.assertEquals(expectedResult, actualResult);
     }

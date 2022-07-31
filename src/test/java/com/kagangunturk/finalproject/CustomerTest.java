@@ -41,7 +41,6 @@ public class CustomerTest {
     @Test
     public void testCustomerName(){
         Customer customer = customerService.getAll().get(1);
-        System.out.println(customer);
 
         String expectedName = customer.getCustomer_firstname();
         String actualName = "Cayla";
